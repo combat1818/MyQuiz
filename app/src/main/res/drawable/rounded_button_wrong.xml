@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <solid android:color="@color/wrongBtn"/>
-    <corners android:radius="150dp"/>
+    <corners android:radius="10dp"/>
 
 
 </shape>

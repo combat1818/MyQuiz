@@ -2,12 +2,16 @@ package com.example.myquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -74,6 +78,7 @@ public class QuizActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
         currentQuestion=0;
         showNextQuestion();
+        startAnimation(5000);
     }
 
     private void showNextQuestion(){
@@ -103,8 +108,9 @@ public class QuizActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 public void run() {
                     // Actions to do after 5 seconds
-                    btn.setBackgroundResource(R.drawable.rounded_button);
+                    btn.setBackgroundResource(R.drawable.rounded_button_casual);
                     showNextQuestion();
+                    startAnimation(5000);
                 }
             }, delay);
 
@@ -124,7 +130,21 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void finishQuiz(){
-        finish();
+        //Intent intent=new Intent(QuizActivity.this, MainActivity.class);
+        //startActivity(intent);
+
+        Intent backToMenu = new Intent(QuizActivity.this, MainActivity.class);
+        backToMenu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(backToMenu);
+    }
+
+    private void startAnimation(int duration){
+        View circle2 = (ImageView) findViewById(R.id.btk);
+        ScaleAnimation fade_in =  new ScaleAnimation(4f, 0f, 4f, 0f,
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        fade_in.setDuration(duration);     // animation duration in milliseconds
+        fade_in.setFillAfter(true);    // If fillAfter is true, the transformation that this animation performed will persist when it is finished.
+        circle2.startAnimation(fade_in);
     }
 
 }

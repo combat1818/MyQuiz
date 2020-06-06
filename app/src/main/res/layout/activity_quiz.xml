@@ -4,9 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#396dbf"
-    android:padding="16dp"
+    android:background="#4a4646"
     tools:context=".QuizActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle"
+        android:id="@+id/btk"/>
 
     <TextView
         android:id="@+id/questionView"
@@ -19,68 +26,61 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_question"
+        android:gravity="center"
         android:minHeight="250dp"
         android:text="Here goes the question"
-        android:gravity="center"
+        android:textColor="#fff"
         android:textSize="20sp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/row1"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         android:layout_below="@id/questionView"
-        android:gravity="center"
-        android:orientation="horizontal">
-
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/option1"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button"
-            android:text="Option 1" />
+            android:background="@drawable/rounded_button_casual"
+            android:text="Button 1"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option2"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button"
-            android:text="Option 2" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/row2"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@id/row1"
-        android:gravity="center"
-        android:orientation="horizontal">
+            android:background="@drawable/rounded_button_casual"
+            android:text="Button 1"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option3"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button"
-            android:text="Option 3" />
+            android:background="@drawable/rounded_button_casual"
+            android:text="Button 1"
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/option4"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/rounded_button"
-            android:text="Option 4" />
+            android:background="@drawable/rounded_button_casual"
+            android:text="Button 1"
+            android:textColor="#fff" />
+
 
     </LinearLayout>
+
 </RelativeLayout>
